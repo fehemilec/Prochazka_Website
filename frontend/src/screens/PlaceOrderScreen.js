@@ -20,6 +20,12 @@ export default function PlaceOrderScreen() {
     const navigate = useNavigate();
 
 
+    const [ema, setEma] = useState({
+        name:"fehmi",
+        lastname:"leci",
+        email:"femo@live.it",
+        message:"Hello simple msg"
+});
 
     const getCartSubTotal = () => {
 
@@ -39,10 +45,17 @@ export default function PlaceOrderScreen() {
 
       const makePayment = token => {
 
+
+        const body_1 = {
+
+            ema, cartItems
+          }
+
         const body = {
     
           token, cartItems, cart
         }
+
         const headers = {
           "Content-Type" : "application/json"
         }
@@ -60,6 +73,16 @@ export default function PlaceOrderScreen() {
             navigate('/');
             console.log("You paid fucker, Status ", status)
             console.log("Token ", token.id)
+
+            return fetch('http://localhost:5000/api/forma' , {
+
+          method: "POST",
+      headers,
+      body: JSON.stringify(body_1)
+        }).then(response => {
+          
+          console.log(response)
+        }).catch(error => console.log(error))
 
 
           }

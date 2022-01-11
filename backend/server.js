@@ -6,6 +6,7 @@ const productRoutes = require("./routes/productRoutes");
 const connectDB = require("./config/db");
 const stripe = require("stripe")(process.env.S_KEY);
 
+const nodemailer = require('nodemailer')
 
 connectDB();
 
@@ -18,6 +19,60 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.json({ message: "API running..." });
 });
+
+
+//SENDING EMAIL
+app.post('/api/forma', (req,res) => {
+
+
+  const {ema, cartItems} = req.body;
+  console.log(ema.email)
+
+  //console.log("PRICE PAID MAIL", cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2));
+
+  let smtpTransport = nodemailer.createTransport({
+      service: "Gmail",
+      port:465,
+      auth:{
+          user:'fehemifemo@gmail.com',
+          pass:'FhBa169B'
+      },
+      tls: {
+          rejectUnauthorized: false
+      }
+  });
+
+  let mailOptions = {
+      from:"fehemifemo@gmail.com",
+      to:ema.email,
+      subject:"New order",
+      html:
+      `<h3>Info</h3>
+      <ul>
+      <li>Name: ${ema.name}</li>
+
+      <h3>Amount Paid: ${cartItems.reduce((price, item) => price + item.price * item.qty, 0).toFixed(2)}</h3>
+      <p></p>
+
+      `
+  };
+
+  smtpTransport.sendMail(mailOptions,(error, response)=> {
+
+      if(error){
+          return console.log(error)
+      }
+      else{
+
+          console.log("Mail sent")
+      }
+
+
+  })
+
+  smtpTransport.close();
+})
+
 
 app.use("/api/products", productRoutes);
 
