@@ -1,108 +1,270 @@
 .navbar {
-    width: 100%;
-    height: 110px;
-    background-color: #171717;
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1.5rem 1rem;
-    z-index: 50;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
   
-  .navbar__logo h2 {
-    color: #f4f4f4;
-    font-size: 1.4rem;
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+    width: 100%;
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    justify-self: start;
     cursor: pointer;
-  }
-  .navbar__logo > a {
     text-decoration: none;
-
+    display: flex;
+    font-size: 27px;
+    align-items: center;
+  }
+  
+  .fa-typo3 {
+    margin-left: 0.5rem;
+    font-size: 1.7rem;
+  }
+  
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 60vw;
+    justify-content: end;
+    margin-right: 2rem;
+  }
+  
+  .nav-item {
+    height: 80px;
+  }
+  
+  .nav-home, 
+  .nav-services, 
+  .nav-aboutus,
+  .nav-contact,
+  .nav-cart {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
   }
 
-  .navbar__links{
-      display:flex;
-      list-style: none;
-      align-items: center;
+  .nav-cart > i{
+    margin-right: 2px;
+  }
+  
+  .cartlogo {
+    width: 30px;
+    height: 30px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    margin-left: 5px;
+    color: #171717;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
   }
 
-  .navbar__links > li{
-      padding-left: 1.5rem;
-
+  .nav-home:hover, 
+  .nav-services:hover, 
+  .nav-aboutus:hover,
+  .nav-contact:hover,
+  .nav-cart:hover {
+    border-bottom: 4px solid #fff;
+    transition: all 0.2s ease-out;
+    color: lightgrey;
   }
-
-  .navbar__links > li > a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-       
+  
+  .fa-bars {
+    color: #fff;
   }
-  .navbar__links > li > a > span {
-      display: flex;
-      align-items: center;
-      margin-left: 8px;
+  
+  .nav-links-mobile {
+    display: none;
   }
-
-  .cart__link{
-      background: #333;
-      padding:10px;
-      border-radius: 8px;
-
+  
+  .menu-icon {
+    display: none;
   }
+  
+  @media screen and (max-width: 963px) {
+    .NavbarItems {
+      position: relative;
+    }
 
-  .cart__link:hover{
-      background: #dd219e;
-      color: #f4f4f4;
-  }
-
-  .cartlogo__badge{
-      width: 30px;
-      height: 30px;
-      background: #f4f4f4;
-      border-radius: 50%;
-      margin-left: 8px;
-      color: #171717;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 1rem;
-
-  }
-
-  .hamburger__menu{
-      width: 30px;
-      height: 30px;
+    .btn-mobile{
       display: none;
+    }
+  
+    .nav-menu {
+      display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-  }
-
-  .hamburger__menu > div{
       width: 100%;
-      height: 3px;
-      background: #f4f4f4;
+      height: 90vh;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+  
+    .nav-menu.active {
+      background: #242222;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+      justify-content: center;
+    }
+  
+    .nav-home, 
+    .nav-services, 
+    .nav-aboutus,
+    .nav-contact,
+    .nav-cart {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    .nav-home:hover, 
+    .nav-services:hover, 
+    .nav-aboutus:hover,
+    .nav-contact:hover,
+    .nav-cart:hover {
+      background-color: #fff;
+      color: #242424;
+      border-radius: 0;
+    }
+  
+    
+  
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  
+    .fa-times {
+      color: #fff;
+      font-size: 2rem;
+    }
+  
+    .nav-links-mobile {
+      display: block;
+      text-align: center;
+      margin: 2rem auto;
+      border-radius: 4px;
+      width: 80%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: #fff;
+      padding: 14px 20px;
+      border: 1px solid #fff;
+      transition: all 0.3s ease-out;
+    }
+  
+    .nav-links-mobile:hover {
+      background: #fff;
+      color: #242424;
+      transition: 250ms;
+    }
   }
 
-  .hamburger__menu:hover > div{
-    background: #dd219e;
+ /* @media screen and (max-width: 360px) {
+    .navbar-logo {
+      margin-left: -10%;
+      margin-top: 5%;
+      font-size: 20px;
+    }
+  }*/
+
+  /*@media screen and (max-width: 331px) {
+    .navbar-logo{
+      margin-left: auto;
+      font-size: 18px;
+    }
+  
+    .navbar-logo > i{
+      font-size: 1rem;
+    }
+  }*/
+
+  @media screen and (min-width:301px) and (max-width:963px) {
+    .navbar-logo {
+      position: absolute;
+      left: 8px;
+      margin-top: 0px;
+      font-size: 25px;
+    }
   }
 
-  @media(max-width: 960px){
-      .navbar__links{
-          display: none;
-      }
+  @media screen and (max-width:300px) {
 
-      .hamburger__menu{
-          display: flex;
-      }
+    
+
+    .navbar-logo{
+      font-size: 20px;
+      margin-left: -25%;
+      margin-top: -5px;
+    }
+  
+    .navbar-logo > i{
+      font-size: 1rem;
+    }
+
+    .menu-icon{
+      margin-left: -30px;
+      margin-top: 5px;
+      font-size: 1.5rem;
+    }
+
+    .fa-times {
+      color: #fff;
+      font-size: 1.5rem;
+    }
   }
 
-  @media(max-width: 500px){
-    .navbar__logo h2{
-        font-size: 1rem;
+  @media screen and (max-width:230px) {
+    .navbar-logo{
+      font-size: 15px;
+      margin-left: -10%;
+      margin-top: -5px;
+    }
+  
+    .navbar-logo > i{
+      font-size: 0.7rem;
+    }
+
+    .menu-icon{
+      margin-left: -30px;
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+
+    .fa-times {
+      color: #fff;
+      font-size: 1rem;
     }
   }

@@ -9,6 +9,13 @@ import Navbar from './components/Navbar';
 import Backdrop from './components/Backdrop';
 import SideDrawer from './components/SideDrawer';
 
+import Home from './components/pages/Home';
+import Services from './components/pages/Services';
+import AboutUs from './components/pages/AboutUs';
+import Contact from './components/pages/Contact';
+import Horizontal from './components/pages/Horizontal';
+
+
 
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
@@ -31,7 +38,12 @@ function App() {
       <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
       <main>
         <Routes>
-          <Route exact path="/" element={<HomeScreen/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/aboutus' element={<AboutUs />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/horizontal' element={<Horizontal />} />   
+          <Route exact path="/products" element={<HomeScreen/>} />
           <Route exact path="/product/:id" element={<ProductScreen/>} />
           <Route exact path="/cart" element={<CartScreen/>} />
           <Route exact path="/shipping" element={<ShippingAddressScreen/>} />
