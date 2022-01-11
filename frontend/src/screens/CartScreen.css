@@ -2,6 +2,9 @@
     display: flex;
     max-width: 1300px;
     margin: 2rem auto;
+    margin-bottom: 15%;
+    margin-top: 5%;
+
   }
   
   .cartscreen h2 {

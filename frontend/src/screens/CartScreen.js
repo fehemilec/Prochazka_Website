@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import CartItem from "../components/CartItem";
+import Footer from '../components/Footer';
 
 // Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
@@ -75,7 +76,10 @@ const CartScreen = () => {
             <button onClick={checkoutHandler}>Proceed To Checkout</button>
           </div>
         </div>
+
       </div>
+
+      <Footer />
     </>
   );
 };

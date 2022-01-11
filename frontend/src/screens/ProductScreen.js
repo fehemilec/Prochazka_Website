@@ -7,6 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
+import Footer from '../components/Footer';
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -28,6 +29,8 @@ const ProductScreen = ({ match, history }) => {
   };
 
   return (
+
+    <>
     <div className="productscreen">
       {loading ? (
         <h2>Loading...</h2>
@@ -76,7 +79,13 @@ const ProductScreen = ({ match, history }) => {
           </div>
         </>
       )}
+
+  
     </div>
+
+    <Footer />
+    </>
+    
   );
 };
 

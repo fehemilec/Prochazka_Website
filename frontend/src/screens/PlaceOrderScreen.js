@@ -9,6 +9,8 @@ import StripeCheckout from 'react-stripe-checkout'
 
 
 import { Link , useNavigate} from 'react-router-dom';
+import Footer from '../components/Footer';
+
 import  './PlaceOrderScreen.css'
 
 
@@ -193,7 +195,7 @@ export default function PlaceOrderScreen() {
 
 
 
-
+      <Footer />
 
 
 

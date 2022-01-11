@@ -4,6 +4,7 @@ import  './ShippingAddressScreen.css'
 import {useDispatch, useSelector} from 'react-redux'
 import { saveBillingAddress, saveShippingAddress } from '../redux/actions/cartActions';
 import { Link, useNavigate } from "react-router-dom";
+import Footer from '../components/Footer';
 
 
 export default function ShippingAddressScreen() {
@@ -45,8 +46,8 @@ export default function ShippingAddressScreen() {
     return (
         <div>
             <CheckoutSteps step1 ></CheckoutSteps>
-
-            <form className="form" onSubmit={submitHandler}>
+        <div className="address_forms">
+            <form className="form">
                <div className= "formDiv"> <div>
                     <h2 className="title">Billing Address</h2>
                 </div>
@@ -117,7 +118,7 @@ export default function ShippingAddressScreen() {
 
 
 
-            <form className="form_ship" onSubmit={submitHandler}>
+            <form className="form_ship">
                <div className= "formDiv"> <div>
                     <h2 className="title">Shipping Address</h2>
                 </div>
@@ -183,15 +184,18 @@ export default function ShippingAddressScreen() {
 
                  </div>
 
-                 <div className="contin">
-                    <label/>
-                    <button className="primary" type="submit">Continue</button> 
-                </div> 
             </form>
-
             
+        </div>
+            
+        <div className="contin">
+                    <label/>
+                    <button className="primary" type="submit" onClick={submitHandler}>Continue</button> 
+                </div> 
+
+                <Footer />
+        </div>
 
         
-        </div>
     )
 }
