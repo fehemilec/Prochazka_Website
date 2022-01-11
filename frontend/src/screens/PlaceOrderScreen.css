@@ -1,0 +1,37 @@
+.ship_info, .paym_meth{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: 90%;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    word-break: break-all;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.paym_meth{
+    margin-top: 10px;
+}
+.ship_info > h2,
+.paym_meth >h2 {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.card-body {
+    margin-left: 10px;
+    width: 90%;
+}
+
+.card-body >h2 {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.ship_info > p,
+.paym_meth > p{
+    margin-left: 10px;
+}
+

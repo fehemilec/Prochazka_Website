@@ -1,0 +1,31 @@
+.checkout-steps {
+    
+  
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    
+  }
+
+  .checkout-steps > div {
+    margin: auto;
+    border-top: 0.3rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+  }
+
+  .checkout-steps > div.active {
+    border-top-color: #f08000;
+    color: #f08000;
+
+  }
+
+  
