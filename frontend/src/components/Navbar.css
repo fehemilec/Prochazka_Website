@@ -1,5 +1,5 @@
 .navbar {
-    background: #A21313;
+    background: #a21313;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -8,31 +8,24 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    opacity: 90%;
   }
   
-  .navbar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    max-width: 1500px;
-    width: 100%;
-  }
+  .navbar-container {  display: flex;  width: 100%;  }
   
   .navbar-logo {
     color: #fff;
-    justify-self: start;
     cursor: pointer;
     text-decoration: none;
     display: flex;
     font-size: 27px;
     align-items: center;
+    margin-left: 3%;
+    min-width: 260px;
+    height:80px;
   }
   
-  .fa-typo3 {
-    margin-left: 0.5rem;
-    font-size: 1.7rem;
-  }
+  .fa-typo3 {  margin-left: 0.5rem;  font-size: 1.7rem;  }
   
   .nav-menu {
     display: grid;
@@ -40,14 +33,12 @@
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 60vw;
+    width: 100%;
     justify-content: end;
     margin-right: 2rem;
   }
   
-  .nav-item {
-    height: 80px;
-  }
+  .nav-item {  height: 80px;  }
   
   .nav-home, 
   .nav-services, 
@@ -62,9 +53,7 @@
     height: 100%;
   }
 
-  .nav-cart > i{
-    margin-right: 2px;
-  }
+  .nav-cart > i {  margin-right: 2px;  }
   
   .cartlogo {
     width: 30px;
@@ -90,27 +79,15 @@
     color: lightgrey;
   }
   
-  .fa-bars {
-    color: #fff;
-  }
+  .fa-bars {  color: #fff;  }
   
-  .nav-links-mobile {
-    display: none;
-  }
+  .nav-links-mobile {  display: none;  }
   
-  .menu-icon {
-    display: none;
-  }
+  .menu-icon {  display: none;  }
   
   @media screen and (max-width: 963px) {
-    .NavbarItems {
-      position: relative;
-    }
-
-    .btn-mobile{
-      display: none;
-    }
-  
+    .NavbarItems { position: relative; }
+    .btn-mobile{  display: none;  }  
     .nav-menu {
       display: flex;
       flex-direction: column;
@@ -153,22 +130,19 @@
       border-radius: 0;
     }
   
-    
-  
     .menu-icon {
-      display: block;
+      display: flex;
       position: absolute;
       top: 0;
       right: 0;
-      transform: translate(-100%, 60%);
+      height: 100%;
+      margin-right: 3%;
+      align-items: center;
       font-size: 1.8rem;
       cursor: pointer;
     }
   
-    .fa-times {
-      color: #fff;
-      font-size: 2rem;
-    }
+    .fa-times {  color: #fff;  font-size: 2rem;  }
   
     .nav-links-mobile {
       display: block;
@@ -185,86 +159,23 @@
       transition: all 0.3s ease-out;
     }
   
-    .nav-links-mobile:hover {
-      background: #fff;
-      color: #242424;
-      transition: 250ms;
-    }
+    .nav-links-mobile:hover {  background: #fff;  color: #242424;  transition: 250ms;  }
   }
 
- /* @media screen and (max-width: 360px) {
-    .navbar-logo {
-      margin-left: -10%;
-      margin-top: 5%;
-      font-size: 20px;
-    }
-  }*/
+  /*@media screen and (min-width:301px) and (max-width:963px) { .navbar-logo { font-size: 25px; } }*/
 
-  /*@media screen and (max-width: 331px) {
-    .navbar-logo{
-      margin-left: auto;
-      font-size: 18px;
-    }
-  
-    .navbar-logo > i{
-      font-size: 1rem;
-    }
-  }*/
-
-  @media screen and (min-width:301px) and (max-width:963px) {
-    .navbar-logo {
-      position: absolute;
-      left: 8px;
-      margin-top: 0px;
-      font-size: 25px;
-    }
-  }
-
-  @media screen and (max-width:300px) {
-
-    
-
-    .navbar-logo{
-      font-size: 20px;
-      margin-left: -25%;
-      margin-top: -5px;
-    }
-  
-    .navbar-logo > i{
-      font-size: 1rem;
-    }
-
-    .menu-icon{
-      margin-left: -30px;
-      margin-top: 5px;
-      font-size: 1.5rem;
-    }
-
-    .fa-times {
-      color: #fff;
-      font-size: 1.5rem;
-    }
+  @media screen and (max-width:320px) {    
+    .navbar-logo{  font-size: 20px;  min-width: auto; }  
+    .navbar-logo > i{  font-size: 1rem;  }
+    .menu-icon{   font-size: 1.5rem; }
+    .fa-times {  color: #fff;  font-size: 1.5rem; }
   }
 
   @media screen and (max-width:230px) {
-    .navbar-logo{
-      font-size: 15px;
-      margin-left: -10%;
-      margin-top: -5px;
-    }
-  
-    .navbar-logo > i{
-      font-size: 0.7rem;
-    }
-
-    .menu-icon{
-      margin-left: -30px;
-      margin-top: 15px;
-      font-size: 1rem;
-    }
-
-    .fa-times {
-      color: #fff;
-      font-size: 1rem;
-    }
+    .navbar-logo{ font-size: auto; margin-right: 30px; }  
+    .navbar-logo > i { display: none;}
+    .menu-icon { font-size: auto; }
+    .fa-times { color: #fff; font-size: auto; }
   }
+
+  @media screen and (max-width:130px) { .navbar-logo{word-break: break-all;} }

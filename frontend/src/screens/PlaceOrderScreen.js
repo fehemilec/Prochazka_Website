@@ -26,7 +26,6 @@ export default function PlaceOrderScreen() {
         name:"fehmi",
         lastname:"leci",
         email:"femo@live.it",
-        message:"Hello simple msg"
 });
 
     const getCartSubTotal = () => {
@@ -72,7 +71,7 @@ export default function PlaceOrderScreen() {
 
           if(status === 200){
 
-            navigate('/');
+            navigate('/confirmation');
             console.log("You paid fucker, Status ", status)
             console.log("Token ", token.id)
 
@@ -98,7 +97,7 @@ export default function PlaceOrderScreen() {
     return (
         
         <div>
-            <CheckoutSteps step1 step2 step3></CheckoutSteps>
+            <CheckoutSteps step1 step2></CheckoutSteps>
            
 
 
@@ -136,17 +135,6 @@ export default function PlaceOrderScreen() {
                             </div>
                        
 
-
-                        
-                            <div className="paym_meth">
-                                <h2>Payment</h2>
-                                <p>
-                                    <strong>Method: </strong>{cart.paymentMethod}
-
-                                </p>
-                            </div>
-                        
-
                         
                             <div className="card card-body">
                                 <h2>Order Items</h2>
@@ -176,7 +164,7 @@ export default function PlaceOrderScreen() {
         <div className="cartscreen__right">
           <div className="cartscreen__info">
             <p>Subtotal ({getCartCount()}) items</p>
-            <p>${getCartSubTotal()}</p>
+            <p>Kč {getCartSubTotal()}</p>
           </div>
           <div>
           <StripeCheckout 
@@ -187,16 +175,11 @@ export default function PlaceOrderScreen() {
             .reduce((price, item) => price + item.price * item.qty, 0)
             .toFixed(2) * 100}
         >
-          <button className="btn-large blue">Buy React man</button>
+          <button className="btn-large blue">Pay now with Card</button>
         </StripeCheckout>
           </div>
         </div>
       </div>
-
-
-
-      <Footer />
-
 
 
         </div>

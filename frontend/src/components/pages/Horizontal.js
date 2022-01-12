@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import Footer from '../Footer';
 import Horiz from '../Horiz';
 import Pallete from '../Pallete';
 
@@ -9,7 +8,6 @@ function Horizontal() {
     <>
       <Horiz />
       <Pallete/>
-      <Footer />
     </>
   );
 }

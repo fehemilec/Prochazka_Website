@@ -34,10 +34,11 @@ export default function ShippingAddressScreen() {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        
         dispatch(saveBillingAddress({fullName,address,city,postalCode,country}));
         dispatch(saveShippingAddress({fullName_ship,address_ship,city_ship,postalCode_ship,country_ship}));
 
-        navigate('/payment');
+        navigate('/placeorder');
         console.log(fullName);
     };
 
@@ -193,7 +194,7 @@ export default function ShippingAddressScreen() {
                     <button className="primary" type="submit" onClick={submitHandler}>Continue</button> 
                 </div> 
 
-                <Footer />
+            
         </div>
 
         

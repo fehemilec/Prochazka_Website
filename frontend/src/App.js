@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import Navbar from './components/Navbar';
-import Backdrop from './components/Backdrop';
-import SideDrawer from './components/SideDrawer';
+import Footer from './components/Footer';
+
 
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
@@ -21,22 +21,20 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
-import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import ConfirmationScreen from './screens/ConfirmationScreen';
+
 
 
 function App() {
 
-  const[sideToggle, setSideToggle]=useState(false);
 
   return (
   
   
     <Router>  
-      <Navbar click={() => setSideToggle(true)}/>
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
-      <main>
+      <Navbar/>
+      
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/services' element={<Services />} />
@@ -47,10 +45,11 @@ function App() {
           <Route exact path="/product/:id" element={<ProductScreen/>} />
           <Route exact path="/cart" element={<CartScreen/>} />
           <Route exact path="/shipping" element={<ShippingAddressScreen/>} />
-          <Route exact path="/payment" element={<PaymentMethodScreen/>} />
           <Route exact path="/placeorder" element={<PlaceOrderScreen/>} />
+          <Route exact path="/confirmation" element={<ConfirmationScreen/>} />
+
         </Routes>
-      </main>
+      <Footer/>
 
 
     </Router>

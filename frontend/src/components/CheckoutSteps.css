@@ -25,7 +25,19 @@
   .checkout-steps > div.active {
     border-top-color: #f08000;
     color: #f08000;
+    display: block;
 
   }
+  .checkout-steps > div.active1 {
+    display: block;
+    border-top-color: #f08000;
+    color: #f08000;
+    text-align: right;
 
+  }
   
+  .checkout-steps > div.empty {
+    display: block;
+    text-align: right;
+
+  }

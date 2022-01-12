@@ -27,7 +27,6 @@ const INITIAL_STATE = {
         cartItems: cartFromLocalStorage,
         billingAddress: addressFromLocalStorage,
         shippingAddress: shipaddressFromLocalStorage,
-        paymentMethod: 'PayPal'
     }
 }
 

@@ -39,11 +39,9 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
           ...state,
           shippingAddress: action.payload
         };
+        case actionTypes.CART_EMPTY:
+      return { ...state, error: '', cartItems: [] };
         
-        case actionTypes.CART_SAVE_PAYMENT_METHOD:
-          return{
-            ...state, paymentMethod: action.payload
-          }
     default:
       return state;
   }
