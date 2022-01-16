@@ -83,7 +83,6 @@ const ProductScreen = ({ match, history }) => {
   
     </div>
 
-    <Footer />
     </>
     
   );

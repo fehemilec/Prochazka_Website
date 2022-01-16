@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import CartItem from "../components/CartItem";
-import Footer from '../components/Footer';
 
 // Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
